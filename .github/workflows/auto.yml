@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true
 
       - name: Make change
         run: |
@@ -22,8 +24,8 @@ jobs:
 
       - name: Commit and Push
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config user.name "Shubham"
+          git config user.email "shubhamsharmaa5aug@gmail.com"
           git add .
           git commit -m "Daily auto commit" || echo "No changes to commit"
-          git push
+          git push origin main
